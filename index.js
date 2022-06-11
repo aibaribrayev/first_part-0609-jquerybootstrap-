@@ -6,8 +6,11 @@ $(document).ready(function(){
         let ok = size < 20000 ? true : false;
         answer = `File is ${size}KB which is` + (ok ? ' ok' : ' not good');
         $( '.result' ).text(answer);
-        if(!ok)
+        $( '.result' ).css('color', 'green');
+        if(!ok){
+            $( '.result' ).css('color', 'red');
             $('.icon').attr("src", "icons/thumb-down.png"); 
+        }
         $(".icon").show();
     })
 })
